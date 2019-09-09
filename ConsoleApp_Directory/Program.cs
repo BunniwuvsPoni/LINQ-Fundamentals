@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ConsoleApp_Directory
 {
@@ -11,6 +12,19 @@ namespace ConsoleApp_Directory
             Console.WriteLine("Hello World!");
             string path = @"C:\Windows";
             ShowLargeFilesWithoutLINQ(path);
+            Console.WriteLine("***");
+            ShowLargeFilesWithLINQ(path);
+        }
+
+        private static void ShowLargeFilesWithLINQ(string path)
+        {
+            var query = from file in new DirectoryInfo(path).GetFiles()
+                        orderby file.Length descending
+                        select file;
+            foreach(var file in query.Take(5))
+            {
+                Console.WriteLine($"{file.Name,-20} : {file.Length,10:N0}");
+            }
         }
 
         private static void ShowLargeFilesWithoutLINQ(string path)
