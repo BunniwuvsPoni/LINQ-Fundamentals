@@ -22,12 +22,18 @@ namespace ConsoleApp_Features
                 new Employee { Id = 3, Name="Alex" }
             };
 
+            //  Method syntax
+            var method = developers.Where(e => e.Name.Length == 5)
+                                    .OrderBy(e => e.Name)
+                                    .Select(e => e);
+
+            //  Query syntax
             var query = from developer in developers
                         where developer.Name.Length == 5
                         orderby developer.Name
                         select developer;
 
-            foreach(var employee in query)
+            foreach (var employee in query)
             {
                 Console.WriteLine(employee.Name);
             }
