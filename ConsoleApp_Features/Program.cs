@@ -13,7 +13,8 @@ namespace ConsoleApp_Features
             var developers = new Employee[]
             {
                 new Employee { Id = 1, Name="Scott" },
-                new Employee { Id = 2, Name="Chris" }
+                new Employee { Id = 2, Name="Chris" },
+                new Employee { Id = 2, Name="Christian" }
             };
 
             var sales = new List<Employee>()
@@ -22,7 +23,7 @@ namespace ConsoleApp_Features
             };
 
             var query = from developer in developers
-                        where developer.Name.StartsWith("S")
+                        where developer.Name.Length == 5
                         orderby developer.Name
                         select developer;
 
