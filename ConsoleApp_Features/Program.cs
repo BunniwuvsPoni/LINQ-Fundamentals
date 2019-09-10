@@ -37,6 +37,14 @@ namespace ConsoleApp_Features
             {
                 Console.WriteLine(employee.Name);
             }
+
+            //  Lambda expressions
+
+            //  Expression lambda
+            //  (input-parameters) => expression
+
+            //  Statement lambda
+            //  (input-parameters) => { <sequence-of-statements> }
         }
     }
 }
