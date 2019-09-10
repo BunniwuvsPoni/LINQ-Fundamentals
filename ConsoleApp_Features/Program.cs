@@ -20,6 +20,8 @@ namespace ConsoleApp_Features
             {
                 new Employee { Id = 3, Name="Alex" }
             };
+
+            Console.WriteLine(sales.Count);
         }
     }
 }
