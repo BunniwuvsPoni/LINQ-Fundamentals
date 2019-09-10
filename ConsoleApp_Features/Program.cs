@@ -21,7 +21,15 @@ namespace ConsoleApp_Features
                 new Employee { Id = 3, Name="Alex" }
             };
 
-            Console.WriteLine(developers.Count);
+            var query = from developer in developers
+                        where developer.Name.StartsWith("S")
+                        orderby developer.Name
+                        select developer;
+
+            foreach(var employee in query)
+            {
+                Console.WriteLine(employee.Name);
+            }
         }
     }
 }
