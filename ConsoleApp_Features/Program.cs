@@ -10,18 +10,18 @@ namespace ConsoleApp_Features
         {
             Console.WriteLine("Hello World!");
 
-            Employee[] developers = new Employee[]
+            var developers = new Employee[]
             {
                 new Employee { Id = 1, Name="Scott" },
                 new Employee { Id = 2, Name="Chris" }
             };
 
-            List<Employee> sales = new List<Employee>()
+            var sales = new List<Employee>()
             {
                 new Employee { Id = 3, Name="Alex" }
             };
 
-            Console.WriteLine(sales.Count);
+            Console.WriteLine(developers.Count);
         }
     }
 }
