@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp_Queries
 {
@@ -16,6 +17,13 @@ namespace ConsoleApp_Queries
                 new Movie {Title = "Casablanca", Rating = 8.5f, Year = 1985},
                 new Movie {Title = "Star Wars V", Rating = 8.7f, Year = 1956}
             };
+
+            var query = movies.Where(m => m.Year > 2000);
+
+            foreach(var movie in query)
+            {
+                Console.WriteLine(movie.Title);
+            }
         }
     }
 }
