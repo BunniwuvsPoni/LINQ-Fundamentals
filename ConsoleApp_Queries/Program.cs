@@ -20,9 +20,17 @@ namespace ConsoleApp_Queries
 
             var query = movies.Where(m => m.Year > 2000);
 
-            foreach(var movie in query)
+            /*
+            foreach (var movie in query)
             {
                 Console.WriteLine(movie.Title);
+            }
+            */
+
+            var enumerator = query.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current.Title);
             }
         }
     }
